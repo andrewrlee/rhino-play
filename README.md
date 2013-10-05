@@ -5,11 +5,11 @@ Playing with Mozilla Rhino.
 
 The main things I wanted to see was how easy is it to evaluate predicates which turned out to be trivial.
 I also wanted to expose an object's methods as global level functions as some of the stackflow questions around this made it seem quite difficult.
-For instance, (this post)[http://stackoverflow.com/questions/2552300/how-can-i-add-methods-from-a-java-class-as-global-functions-in-javascript-using]
+For instance, [this post](http://stackoverflow.com/questions/2552300/how-can-i-add-methods-from-a-java-class-as-global-functions-in-javascript-using)
 
 
-I ended up following the approach outlined in (this answer)[http://stackoverflow.com/a/16479685/1089998], but I added a helper base class that allows me to just annotate the methods I wish to make available as a global function in javascript.    
-```
+I ended up following the approach outlined in [this answer](http://stackoverflow.com/a/16479685/1089998), but I added a helper base class that allows me to just annotate the methods I wish to make available as a global function in javascript.    
+```java
 public class AnnotatedScriptableObject extends ScriptableObject {
 
 	@Target(METHOD)
@@ -35,7 +35,7 @@ public class AnnotatedScriptableObject extends ScriptableObject {
 
 So, my context object is simply: 
 
-```
+```java
 public class Model extends AnnotatedScriptableObject {
 	...
 	@Expose
@@ -48,7 +48,7 @@ public class Model extends AnnotatedScriptableObject {
  An example of using this:
 
 
-```
+```java
 	public static void main(String[] args) {
 
 		Model data = new Model()//
