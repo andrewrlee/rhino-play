@@ -64,7 +64,7 @@ public class Model extends AnnotatedScriptableObject {
 			checkState(evaluator.evaluate("nicknameOf('James') != 'Johnny'"));
 			
 			checkState(evaluator.evaluate("ageOf('James') == 50"));
-			checkState(evaluator.evaluate("!ageOf('Nicholas') >= 50"));
+			checkState(evaluator.evaluate("! (ageOf('Nicholas') >= 50)"));
 			
 			checkState(evaluator.evaluate("myRelationTo('Nicholas') == 'Cousin'"));
 			checkState(evaluator.evaluate("myRelationTo('Linda') != 'Nemesis'"));
