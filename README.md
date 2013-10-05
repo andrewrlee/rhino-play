@@ -39,7 +39,7 @@ So, my context object is simply:
 public class Model extends AnnotatedScriptableObject {
 	...
 	@Expose
-	public String nickNameOf(String friendsName) {
+	public String nicknameOf(String friendsName) {
 		return relativesNamesToNicknames.get(friendsName);
 	}
 	...
@@ -60,8 +60,8 @@ public class Model extends AnnotatedScriptableObject {
 
 		try {
 
-			checkState(evaluator.evaluate("nickNameOf('Linda') == 'Aunty Linda'"));
-			checkState(evaluator.evaluate("nickNameOf('James') != 'Johnny'"));
+			checkState(evaluator.evaluate("nicknameOf('Linda') == 'Aunty Linda'"));
+			checkState(evaluator.evaluate("nicknameOf('James') != 'Johnny'"));
 			
 			checkState(evaluator.evaluate("ageOf('James') == 50"));
 			checkState(evaluator.evaluate("ageOf('Nicholas') != 50"));
